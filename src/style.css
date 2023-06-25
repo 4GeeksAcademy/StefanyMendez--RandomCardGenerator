@@ -138,11 +138,11 @@ body {
   transform: scaleY(-1);
 }
 .card {
-  height: 40rem;
-  width: 28rem;
+  height: 32rem;
+  width: 22rem;
   border-radius: 1rem;
   position: relative;
-  font-size: 20rem;
+  font-size: 15rem;
   margin-top: 10rem;
   padding: 1rem;
   text-align: center;
@@ -151,14 +151,14 @@ body {
     top: 0.5rem;
     left: 2rem;
     position: absolute;
-    font-size: 10rem;
+    font-size: 9rem;
   }
   &:after {
     transform: scaleY(-1);
     bottom: 0.5rem;
     right: 2rem;
     position: absolute;
-    font-size: 10rem;
+    font-size: 9rem;
   }
   &.spade:before,
   &.spade:after {
@@ -180,8 +180,9 @@ body {
   }
 }
 span {
-  padding-top: 8rem;
+  margin: auto;
 }
+
 .button {
   border: none;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
@@ -189,7 +190,7 @@ span {
 
   text-transform: uppercase;
   color: #fff !important;
-  font-weight: bold;
+
   border-radius: 5px;
   padding: 10px 20px;
   margin: 0 3px;
@@ -209,4 +210,42 @@ span {
 }
 .button-orange:active {
   box-shadow: 0 3px 0 #ff7300, 0 4px 6px hsla(0, 0%, 0%, 0.7);
+}
+#formDiv {
+  margin-left: 15rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  background: #ff9819;
+  box-shadow: 0 10px 0 #ff7300, 0 11px 5px hsla(0, 0%, 0%, 0.5);
+}
+h1 {
+  background: #ff7300;
+}
+.col-form-label {
+  background: #ff7300;
+}
+.button-small {
+  border: none;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+  text-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2);
+
+  text-transform: uppercase;
+  color: #fff !important;
+
+  border-radius: 5px;
+  padding: 10px 20px;
+  position: relative;
+  display: inline-block;
+  transition: all 0.1s;
+  font-size: 1rem;
+}
+.button-small:active {
+  transform: translateY(7px);
+}
+.button-red {
+  background: #f84242;
+  box-shadow: 0 10px 0 #ff1100, 0 11px 5px hsla(0, 0%, 0%, 0.5);
+}
+.button-red:active {
+  box-shadow: 0 3px 0 #ff1100, 0 4px 6px hsla(0, 0%, 0%, 0.7);
 }

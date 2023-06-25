@@ -11,14 +11,62 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
     <div class="card m-auto border-3 shadow-lg mt-4">
       <span></span>
     </div>
-    <div class="text-end">
-      <button id="btnNewCard" class="button button-orange">New Card</button>
+    <div class="row d-flex justify-content-between">
+      <div id="formDiv" class="col-2 p-4 shadow rounded border-3 text-light ">
+        <h1 class="text-center m-1 mb-4 shadow rounded p-2 fs-3">
+          Change Heigth and Width of Card
+        </h1>
+        <div class="mb-3 row fs-5">
+          <label
+            for="inputHeigth"
+            class="col-sm-auto col-md-auto col-lg-3 col-form-label shadow rounded text-center"
+            >Heigth</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="number"
+              class="form-control shadow"
+              id="inputHeigth"
+              placeholder="Mínimo 22"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row fs-5">
+          <label
+            for="inputWidth"
+            class="col-sm-auto col-md-auto col-lg-3 col-form-label shadow rounded text-center"
+            >Width</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="number"
+              class="form-control"
+              id="inputWidth"
+              placeholder="Mínimo 22"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row fs-5">
+          <button id="btnChangeSize" class="button-small button-red">
+            Change Size
+          </button>
+        </div>
+      </div>
+      <div class="col-6 text-end">
+        <button id="btnNewCard" class="button button-orange">New Card</button>
+      </div>
     </div>
   </body>
 </html>

@@ -14,8 +14,8 @@ window.onload = function() {
   intervaloClearCard = setInterval(clearCard, 10000);
   intervaloNewCard = setInterval(newCard, 10000);
 
-  let button = document.getElementById("btnNewCard");
-  button.addEventListener("click", event => {
+  let buttonNewCard = document.getElementById("btnNewCard");
+  buttonNewCard.addEventListener("click", event => {
     clearCard();
     newCard();
     clearInterval(intervaloClearCard);
@@ -25,6 +25,23 @@ window.onload = function() {
 
     intervaloClearCard = setInterval(clearCard, 10000);
     intervaloNewCard = setInterval(newCard, 10000);
+  });
+
+  let buttonChangeSize = document.getElementById("btnChangeSize");
+  buttonChangeSize.addEventListener("click", event => {
+    changeSizeCard();
+  });
+  let inputHeigth = document.getElementById("inputHeigth");
+  inputHeigth.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      document.getElementById("inputWidth").focus();
+    }
+  });
+  let inputWidth = document.getElementById("inputWidth");
+  inputWidth.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      changeSizeCard();
+    }
   });
 };
 
@@ -44,7 +61,6 @@ function clearCard() {
 function generateRandomNumber() {
   let numbers = [
     "A",
-    "1",
     "2",
     "3",
     "4",
@@ -58,13 +74,40 @@ function generateRandomNumber() {
     "Q",
     "K"
   ];
-  let index = Math.floor(Math.random() * 12);
+  let index = Math.floor(Math.random() * 13);
 
   return numbers[index];
 }
 function generateRandomSuit() {
   let suit = ["heart", "spade", "club", "diamond"];
-  let index = Math.floor(Math.random() * 3);
+  let index = Math.floor(Math.random() * 4);
 
   return suit[index];
+}
+function changeSizeCard() {
+  let inputHeigth = document.getElementById("inputHeigth").value;
+  let inputWidth = document.getElementById("inputWidth").value;
+  let inputHeigthInt = parseInt(inputHeigth);
+  let inputWidthInt = parseInt(inputWidth);
+
+  if (inputHeigth === "" || inputWidth === "") {
+    swal("Error", "You must enter a value", "error");
+    setTimeout(function() {
+      document.getElementById("inputHeigth").focus();
+    }, 3000);
+    document.getElementById("inputHeigth").value = "";
+    document.getElementById("inputWidth").value = "";
+  }
+  if (inputHeigthInt < 22 || inputWidthInt < 22) {
+    swal("Error", "The heigth and width must be over 22", "error");
+    setTimeout(function() {
+      document.getElementById("inputHeigth").focus();
+    }, 3000);
+    document.getElementById("inputHeigth").value = "";
+    document.getElementById("inputWidth").value = "";
+  } else {
+    let card = document.querySelector(".card");
+    card.style.height = inputHeigth + "rem";
+    card.style.width = inputWidth + "rem";
+  }
 }
